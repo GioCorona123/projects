@@ -36,13 +36,16 @@
     <script>
 	
 		//Store the elements (tags) in variables
-		
+		var fname = document.getElementById(`first`)
+		var lname = document.getElementById(`last`)
+
+		console.log(fname, lname)
 
 		//Make an array to store the people
-		
+		var people = []
 
 		//Make the button clickable. When clicked it calls the calcAndDisplay function.
-		
+		button.addEventListener("click", calcAndDisplay)
 		
 		/*-----------------------------------------------------
 		Will add objects into the people array. 
@@ -67,6 +70,8 @@
 				//2. last: will be a string that uses the last Input's value
 
             var person = {
+				first: fName.value,
+				last: lName.value,
 
 
 
@@ -93,10 +98,10 @@
 			}//end of bubble sort algorithm!
 
 			//console.log the people array to check that the people array is formatted correctly and is populated with the correct objects
-			
+			console.log(people)
 
 			//create a variable called 'output' that has an empty string value stored to 
-			
+			var ooutput = ""
 
 			//Loop through the objects in the people array
 			for()
@@ -109,9 +114,10 @@
 					//Output will resemble:
 					//FIRST: Ivan
 					//LAST: Drago
-				
+					output += <p><b>${key.toUpperCase()}</b>: ${people[i][key]}</p>
 
                 }
+				output += `<hr>`
                 //add a <hr> to the output at the end of this outter loop so a horizontal rule is displayed inbetween each person being displayed to the screen.
 				
 
@@ -119,8 +125,9 @@
 			}//end of loop going through people array to edit 'output'
 
 				//log the output string
+				console.log(output)
 				//replace the outputDiv's inner HTML with the output string
-				
+				document.querySelector(`#output`).innerHTML = output
 
 
 
